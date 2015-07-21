@@ -5,9 +5,15 @@ qiniutest manual
 
 [![Qiniu Logo](http://open.qiniudn.com/logo.png)](http://www.qiniu.com/)
 
+# 下载
+
+```
+go get -u qiniupkg.com/qiniutest
+```
+
 # 基础原理
 
-* [httptest.v1/README.md](TODO)
+* [httptest.v1/README.md](https://github.com/qiniu/httptest.v1)
  
 # 命令行
 
@@ -49,7 +55,7 @@ match <expected-object> <source-object>
 
 关于 match 的详细解释，参见：
 
-* [httptest.v1/README.md](TODO)
+* [httptest.v1/README.md](https://github.com/qiniu/httptest.v1)
 
 ### host
 
@@ -236,6 +242,20 @@ clear 用来清除已经绑定的变量。语法：
 clear <var-name1> <var-name2> ...
 ```
 
+### let
+
+let 用于变量赋值，和主流命令式编程语言的 `=` 最为接近。例如：
+
+```bash
+let $(var-name) <expression>
+```
+
+等价于：
+
+```bash
+clear var-name
+match $(var-name) <expression>
+```
 
 ### equal/equalSet
 
